@@ -4,29 +4,57 @@ The Compatriot badge is an ESP32-C6-WROOM-1 (RISC-V) board with a secondary
 STM32F103C8T6 target chip, a W5500 Ethernet module for CAN-over-Ethernet, and a set
 of breakout headers for the hardware challenges.
 
+<p align="center">
+  <img src="images/board.webp" alt="Compatriot badge, top view" width="520">
+</p>
+
+## Contents
+
+- [Images](#images)
+- [Schematics](#schematics)
+- [Key components](#key-components)
+- [Pin map](#pin-map)
+- [Full bill of materials](#full-bill-of-materials)
+
 ## Images
 
 | File | What it shows |
 |------|----------------|
-| `images/board.webp` | Full board, top view |
-| `images/headers.jpg` | Close-up of the H1/H2/H3 and U10/U11/U13/U14 breakout headers |
-| `images/ethernet.jpg` | The RJ45 (W5500) Ethernet jack used for the CAN bridge |
-| `schematics/headers.jpg` | Schematic crop of the breakout headers (pin numbers/net names) |
-| `schematics/eeprom_flash.jpg` | Schematic crop of the external I2C EEPROM (U2) and SPI flash (U5) |
-| `schematics/io.jpg` | Schematic crop of the free/expansion GPIOs used by the sniffing challenges |
+| [`images/board.webp`](images/board.webp) | Full board, top view |
+| [`images/headers.jpg`](images/headers.jpg) | Close-up of the H1/H2/H3 and U10/U11/U13/U14 breakout headers |
+| [`images/ethernet.jpg`](images/ethernet.jpg) | The RJ45 (W5500) Ethernet jack used for the CAN bridge |
+| [`images/pcb_render.png`](images/pcb_render.png) | 3D render of the bare PCB layout, from the KiCad source |
 
-## Core peripherals
+## Schematics
 
-| Part | Function |
-|------|----------|
-| ESP32-C6-WROOM-1 | Main MCU — badge UI, challenge logic, BLE/WiFi, CAN bridge |
-| STM32F103C8T6 (U7) | Secondary SWD-debuggable target chip (Target Acquired challenge) |
-| W5500 (RJ1) | Ethernet-to-SPI bridge, speaks `cannelloni` (CAN-over-UDP) |
-| M24256E (U2) | External I2C EEPROM, 32 KB, addr `0x50` |
-| W25Q64 (U5) | External SPI NOR flash |
-| AW9523 | I2C GPIO/button expander, addr `0x58` |
+| File | What it shows |
+|------|----------------|
+| [`schematics/full_schematic.pdf`](schematics/full_schematic.pdf) | Complete schematic, exported straight from the board's KiCad source |
+| [`schematics/headers.jpg`](schematics/headers.jpg) | Crop: breakout header pin numbers and net names |
+| [`schematics/eeprom_flash.jpg`](schematics/eeprom_flash.jpg) | Crop: external I2C EEPROM (U2) and SPI flash (U5) |
+| [`schematics/io.jpg`](schematics/io.jpg) | Crop: free/expansion GPIOs used by the sniffing challenges |
 
-## Key pin map
+## Key components
+
+| Ref | Part | Function |
+|-----|------|----------|
+| U3 | ESP32-C6-WROOM-1-N8 | Main MCU — badge UI, challenge logic, BLE/WiFi, CAN bridge |
+| U7 | STM32F103C8T6 | Secondary SWD-debuggable target chip (Target Acquired challenge) |
+| RJ1 | WIZ850IO (W5500) | Ethernet-to-SPI bridge, speaks `cannelloni` (CAN-over-UDP) |
+| U2 | M24256E-FMN6TP | External I2C EEPROM, 32 KB, addr `0x50` |
+| U5 | W25Q64JVSSIQ | External SPI NOR flash |
+| U24 | AW9523BTQR | I2C GPIO/button expander, addr `0x58` |
+| U1 | USBLC6-2SC6 | USB-C ESD protection |
+| U6, U12 | AP2114H-3.3TRG1 | 3.3 V LDO regulators |
+| J1 | USB Type-C | Power + USB-CDC serial |
+| U4, U8–U11, U13–U15, U22, U25 | 1×7 female headers | Breakout headers for the challenges |
+| U27 | 1×5 female header | Auxiliary breakout |
+| SW1–SW4 | Tactile switches | BOOT / RESET |
+
+Full reference designators and quantities for every part (passives included) are in
+[`bom.csv`](bom.csv).
+
+## Pin map
 
 | Signal | GPIO | Header / location |
 |--------|------|--------------------|
@@ -40,7 +68,10 @@ of breakout headers for the hardware challenges.
 | Buzzer | IO11 | — |
 
 GPIO4/5/6/7 on the ESP32 are wired to the onboard SWD/JTAG debug link to the STM32
-target — don't reuse them for anything else, they'll fight the debug interface.
+target — don't reuse them for anything else, they'll fight the debug interface. (This
+is exactly why the SPI-sniff CS line lives on IO15 and not IO4.)
 
-No raw KiCad source is published here. These images are exports from the board's own
-design files, cropped and color-corrected for readability.
+## Full bill of materials
+
+[`bom.csv`](bom.csv) is exported directly from the KiCad schematic (grouped by value +
+footprint) and lists every part on the board, passives included.
