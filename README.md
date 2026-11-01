@@ -8,8 +8,8 @@
 reference, and player guides for every challenge.
 
 [![Firmware](https://img.shields.io/badge/firmware-ESP32--C6-00897B)](firmware)
-[![Challenges](https://img.shields.io/badge/challenges-17-success)](challenges)
-[![Points](https://img.shields.io/badge/points-2775-success)](challenges)
+[![Challenges](https://img.shields.io/badge/challenges-18-success)](challenges)
+[![Points](https://img.shields.io/badge/points-2875-success)](challenges)
 [![Target](https://img.shields.io/badge/target-STM32F103C8-blue)](hardware)
 [![Guides](https://img.shields.io/badge/full%20guides-Wired%20Village-orange)](https://gautham-sai05.github.io/wired_village/)
 
@@ -49,7 +49,7 @@ attendees and as many badges as you can physically hand out. The included
 [`firmware/flash.sh`](firmware/flash.sh) scripts are built around exactly that:
 provisioning many attendee laptops and many badges, unattended, for a live event.
 
-**17 challenges across 3 categories** (Automotive, Embedded, Wireless), each with a
+**18 challenges across 3 categories** (Automotive, Embedded, Wireless), each with a
 guided hint and a full walkthrough, so the badge works equally well as a timed CTF
 station and as a self-paced teaching tool. Full write-ups, wiring diagrams, and tool
 setup instructions are published at
@@ -74,7 +74,7 @@ actually build, flash, and run the badge.
 |--------|----------|
 | [`firmware/`](firmware) | Pre-built ESP32 and STM32 binaries and a one-command flash script |
 | [`hardware/`](hardware) | Board photos, full schematic, 3D render, BOM, pin maps |
-| [`challenges/`](challenges) | Player guides for all 17 challenges (Automotive / Embedded / Wireless) |
+| [`challenges/`](challenges) | Player guides for all 18 challenges (Automotive / Embedded / Wireless) |
 
 ## Quick start
 
@@ -98,7 +98,7 @@ Building a badge from scratch also needs the STM32 target chip flashed once, see
 | **Secondary target** | STM32F103C8T6, SWD-debuggable over header H3 |
 | **Network** | W5500 Ethernet module, speaks `cannelloni` (CAN-over-UDP) for Automotive. Onboard BLE and WiFi for Wireless. |
 | **Display** | 320×240 LCD, 5-button navigation |
-| **Challenges** | 3 categories, 17 challenges, 2775 total points |
+| **Challenges** | 3 categories, 18 challenges, 2875 total points |
 | **Expansion** | 2 module slots (I2C + SPI + power, independent chip-select each) |
 
 The board is built to grow. Two onboard expansion slots expose a shared I2C bus and
@@ -114,7 +114,7 @@ render and bill of materials.
 | Category | Challenges | Points | Guide |
 |----------|:---:|:---:|-------|
 | Automotive (CAN bus and UDS over Ethernet) | 5 | 1150 | [`challenges/automotive.md`](challenges/automotive.md) |
-| Embedded (hardware peripherals) | 7 | 825 | [`challenges/embedded.md`](challenges/embedded.md) |
+| Embedded (hardware peripherals) | 8 | 925 | [`challenges/embedded.md`](challenges/embedded.md) |
 | Wireless (BLE / WiFi) | 5 | 800 | [`challenges/wireless.md`](challenges/wireless.md) |
 
 ## Repository structure
@@ -155,7 +155,7 @@ Compatriot is still an active build. Planned directions for future revisions:
 - Ethernet-based challenges, using the onboard W5500 for more than just the CAN
   bridge it runs today.
 
-This list reflects current plans, not shipped features. The 17 challenges described
+This list reflects current plans, not shipped features. The 18 challenges described
 above are what the badge actually runs today.
 
 ## Links

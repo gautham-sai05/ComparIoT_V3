@@ -2,7 +2,7 @@
 
 ## Tools
 
-Four pieces of hardware cover all eight challenges below. None of it needs to be expensive, the cheap clones of each work fine.
+Four pieces of hardware cover most of the eight challenges below. None of it needs to be expensive, the cheap clones of each work fine. Two-Wire Tap additionally needs a second microcontroller with I2C slave support (any spare Arduino, ESP32, or STM32 board), see that challenge for why.
 
 Serial adapter
 
@@ -175,41 +175,42 @@ That's it, two wires. There's nothing to receive, so no TX channel on the analyz
 
 ## Two-Wire Tap (I2C)
 
-Offline
+Medium
 
-Pulled from this event. It's not selectable on the badge and won't count toward the total challenge count or score.
+Not a pure sniffing challenge: the badge tries to write the flag to I2C address `0x42`, but nothing on the bus answers, so the write gets NAK'd on the address byte and aborts before any data goes out. That's real I2C behavior, not a bug. To see anything at all, you have to supply the missing device.
 
 #### Tool
 
-Logic analyzer + Logic 2. Wire to `SDA (IO21)` / `SCL (IO22)` (header U14, pins 5 and 6) plus GND.
+A second microcontroller with I2C slave support (any 3.3 V board: Arduino, another ESP32, STM32, whatever you have), plus a logic analyzer + Logic 2 to confirm the capture. Wire to `SDA (IO21)` / `SCL (IO22)` (header U14, pins 5 and 6) plus GND.
 
 #### Approach
 
-Capture, add an I2C analyzer, and read each transaction's data bytes as ASCII. Ignore a NACK on the address byte, that's expected here.
+Wire your own board onto the same bus and program it as an I2C slave that ACKs address `0x42`. Once something answers, the badge's write completes for real and the flag goes out on the wire where you can capture it.
 
 **Connection** 
 
 **Where:** header **U14** (one of the 1x7 headers near the ESP32 module), pin 5 = SDA, pin 6 = SCL. Straight from the board's own schematic:
 
-Badge pin| U14 pin| Logic analyzer  
+Badge pin| U14 pin| Wire to  
 ---|---|---  
-IO21| 5 (I2C_SDA)| SDA  
-IO22| 6 (I2C_SCL)| SCL  
-GND| any GND pin| GND  
+IO21| 5 (I2C_SDA)| your board's SDA + logic analyzer  
+IO22| 6 (I2C_SCL)| your board's SCL + logic analyzer  
+GND| any GND pin| shared GND, both devices  
   
-Same bus the EEPROM Raider chip sits on, but here you're tapping the wire with an analyzer, not clipping a programmer onto a chip.
+Same bus the EEPROM Raider chip sits on. Don't drive 5 V logic onto these pins, only 3.3 V.
 
 **Hint** 
 
-Two wires, one address that never answers, and a lot of oversharing. The NACK doesn't stop the data from going out.
+Nothing answers at 0x42 yet. Build the thing that should.
 
 **Full guide** 
 
-  1. Wire SDA to `IO21` (U14 pin 5) and SCL to `IO22` (U14 pin 6), plus any GND pin.
-  2. Set the sample rate to ≥1 MS/s and click **Start**.
-  3. Click the **+** next to Analyzers, pick **I2C** , and set its SDA/SCL inputs to the matching channels.
-  4. You'll see repeated transactions in the Data Table: a Start, an address byte with a Write flag (possibly NACKed, that's expected, nothing real answers at that address), a run of data bytes, then a Stop.
-  5. Read the data bytes as ASCII directly from the Data Table (it has an ASCII column), or by hand from the hex. Together they spell the flag.
+  1. Wire a second microcontroller onto the bus: its SDA to `IO21` (U14 pin 5), its SCL to `IO22` (U14 pin 6), and a shared GND.
+  2. Program it as an I2C slave on address `0x42` (e.g. Arduino `Wire.begin(0x42)` with an `onReceive()` handler). It doesn't need to do anything with the bytes, it just has to exist and ACK.
+  3. Also clip a logic analyzer onto IO21/IO22 + GND. Set the sample rate to ≥1 MS/s and click **Start**.
+  4. Click the **+** next to Analyzers, pick **I2C** , and set its SDA/SCL inputs to the matching channels.
+  5. With your slave running, the Data Table now shows a Start, an address byte with a Write flag that's **ACKed** this time, a run of data bytes, then a Stop, repeating about once a second.
+  6. Read the data bytes as ASCII directly from the Data Table (it has an ASCII column), or by hand from the hex. Together they spell the flag.
 
 
 
