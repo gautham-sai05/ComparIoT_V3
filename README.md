@@ -1,6 +1,8 @@
 <div align="center">
 
-# ComparIoT V3
+<img src="hardware/images/compatriot_logo.png" alt="Compatriot" width="420">
+
+# Compatriot V3
 
 <img src="hardware/images/board.webp" alt="Compatriot badge, top view" width="460">
 
@@ -11,7 +13,7 @@ reference, and player guides for every challenge.
 [![Challenges](https://img.shields.io/badge/challenges-18-success)](challenges)
 [![Points](https://img.shields.io/badge/points-2875-success)](challenges)
 [![Target](https://img.shields.io/badge/target-STM32F103C8-blue)](hardware)
-[![Guides](https://img.shields.io/badge/full%20guides-Wired%20Village-orange)](https://gautham-sai05.github.io/wired_village/)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](LICENSE)
 
 </div>
 
@@ -20,10 +22,10 @@ reference, and player guides for every challenge.
 ## What is Compatriot?
 
 Compatriot is a self-contained, offline hardware security training badge built by
-team bi0s for Wired Village. It's a physical, hands-on counterpart to the usual
-software-only CTF. Every challenge runs on real silicon, on a real bus, not a
-simulation: you sniff an actual SPI/I2C/UART line with a logic analyzer, dump the
-badge's own external SPI flash (W25Q64) or I2C EEPROM (M24256E) with a CH341A
+team bi0s. It's a physical, hands-on counterpart to the usual software-only CTF.
+Every challenge runs on real silicon, on a real bus, not a simulation: you sniff an
+actual SPI/I2C/UART line with a logic analyzer, dump the badge's own external SPI
+flash (W25Q64) or I2C EEPROM (M24256E) with a CH341A
 programmer, reverse-engineer a real encrypted binary over SWD on a second
 microcontroller, and inject real CAN frames onto a real automotive bus. Nothing
 about the attack surface is faked for the exercise. The skills transfer directly to
@@ -45,17 +47,14 @@ The badge is deliberately self-contained: no backend server, no internet depende
 no shared infrastructure that can fall over under load. Progress is scored and
 persisted on the badge itself (NVS, survives a reboot), so it scales to as many
 attendees and as many badges as you can physically hand out. The included
-[`setup.sh`](https://github.com/gautham-sai05/wired_village) and
-[`firmware/flash.sh`](firmware/flash.sh) scripts are built around exactly that:
-provisioning many attendee laptops and many badges, unattended, for a live event.
+[`firmware/flash.sh`](firmware/flash.sh) script is built around exactly that:
+flashing many badges, unattended, for a live event.
 
 **18 challenges across 3 categories** (Automotive, Embedded, Wireless), each with a
 guided hint and a full walkthrough, so the badge works equally well as a timed CTF
-station and as a self-paced teaching tool. Full write-ups, wiring diagrams, and tool
-setup instructions are published at
-[gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/).
-This repository is the portable reference, firmware, hardware, and guides, needed to
-actually build, flash, and run the badge.
+station and as a self-paced teaching tool. This repository is the complete portable
+reference, firmware, hardware, and guides, needed to actually build, flash, and run
+the badge.
 
 ## Contents
 
@@ -66,7 +65,7 @@ actually build, flash, and run the badge.
 - [Categories](#categories)
 - [Repository structure](#repository-structure)
 - [Roadmap](#roadmap)
-- [Links](#links)
+- [License](#license)
 
 ## What's in this repo
 
@@ -160,7 +159,12 @@ Compatriot is still an active build. Planned directions for future revisions:
 This list reflects current plans, not shipped features. The 18 challenges described
 above are what the badge actually runs today.
 
-## Links
+## License
 
-- Full guides and connection diagrams: [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
-- Built by team bi0s for Wired Village
+See [LICENSE](LICENSE). Non-commercial use only: individuals, researchers, and
+educators are free to use, flash, and adapt this, but not to sell it or build a
+commercial product on top of it without permission.
+
+---
+
+<div align="center">Built by team bi0s</div>
