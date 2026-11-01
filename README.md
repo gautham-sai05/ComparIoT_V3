@@ -124,8 +124,8 @@ render and bill of materials.
 | CODE BLUE | 2025 | CompatrIoT (an earlier edition), workshop and CTF |
 | BSides Kerala | 2025 | CompatrIoT (an earlier edition), hardware hacking training |
 | BSides Kerala | 2026 | CompatrIoT (an earlier edition), hardware hacking training |
-| CODE BLUE | 2026 (selected) | This build (Compatriot V3) |
 | Black Hat Arsenal Labs, India 2026 | 2026 | This build (Compatriot V3) |
+| CODE BLUE | 2026 (selected) | This build (Compatriot V3) |
 
 ## Repository structure
 
