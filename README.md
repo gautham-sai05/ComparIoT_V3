@@ -129,3 +129,12 @@ ComparIoT_V3/
 - Full guides and connection diagrams: [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
 - Sysrupt, the companion OT/ICS range, is linked from the same site
 - Built by team bi0s for Wired Village
+
+## Acknowledgements
+
+Compatriot's dual-microcontroller approach (an ESP32 for the badge platform paired
+with a separate STM32 as a real reverse-engineering target) follows the same idea as
+[Traboda's CompatrIoT](https://github.com/traboda/CompatrIoT), an open-source
+hardware security training platform built around the same concept. This build is
+team bi0s's own implementation for Wired Village: its own PCB, firmware, challenges,
+and flags.
