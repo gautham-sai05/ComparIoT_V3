@@ -39,7 +39,7 @@ of breakout headers for the hardware challenges.
 
 | Ref | Part | Function |
 |-----|------|----------|
-| U3 | ESP32-C6-WROOM-1-N8 | Main MCU: badge UI, challenge logic, BLE/WiFi, CAN bridge |
+| U3 | ESP32-C6-WROOM-1-N8 | Main MCU: badge UI, challenge logic, BLE/WiFi, CAN bridge. Also has a built-in 802.15.4 radio (Zigbee/Thread), not used by any challenge yet. |
 | U7 | STM32F103C8T6 | Secondary SWD-debuggable target chip (Target Acquired challenge) |
 | RJ1 | WIZ850IO (W5500) | Ethernet-to-SPI bridge, speaks `cannelloni` (CAN-over-UDP) |
 | U2 | M24256E-FMN6TP | External I2C EEPROM, 32 KB, addr `0x50` |
