@@ -121,11 +121,11 @@ render and bill of materials.
 |-------|------|-----------------|
 | Black Hat Asia 2025, Arsenal Labs | April 2025 | CompatrIoT (an earlier edition) |
 | SINCON, Infosec in the City (Hardware Hacking Kampung) | 2025 | CompatrIoT (an earlier edition) |
-| CODE BLUE | 2025 | CompatrIoT (an earlier edition), workshop and CTF |
+| CODE BLUE, Japan | 2025 | CompatrIoT (an earlier edition), workshop and CTF |
 | BSides Kerala | 2025 | CompatrIoT (an earlier edition), hardware hacking training |
 | BSides Kerala | 2026 | CompatrIoT (an earlier edition), hardware hacking training |
 | Black Hat Arsenal Labs, India 2026 | 2026 | This build (Compatriot V3) |
-| CODE BLUE | 2026 (selected) | This build (Compatriot V3) |
+| CODE BLUE, Japan | 2026 (selected) | This build (Compatriot V3) |
 
 ## Repository structure
 
