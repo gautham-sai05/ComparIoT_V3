@@ -154,6 +154,8 @@ Compatriot is still an active build. Planned directions for future revisions:
   as flag-only exercises.
 - Ethernet-based challenges, using the onboard W5500 for more than just the CAN
   bridge it runs today.
+- Zigbee challenges, using one of the expansion slots to add a Zigbee radio module
+  as new protocol surface.
 
 This list reflects current plans, not shipped features. The 18 challenges described
 above are what the badge actually runs today.
