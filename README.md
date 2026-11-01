@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="hardware/images/compatriot_logo.png" alt="Compatriot V3" width="520">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="hardware/images/compatriot_logo_white.png">
+  <img src="hardware/images/compatriot_logo_black.png" alt="Compatriot V3" width="520">
+</picture>
 
 <img src="hardware/images/board.webp" alt="Compatriot badge, top view" width="460">
 
