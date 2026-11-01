@@ -5,7 +5,7 @@ STM32F103C8T6 target chip, a W5500 Ethernet module for CAN-over-Ethernet, and a 
 of breakout headers for the hardware challenges.
 
 <p align="center">
-  <img src="images/board.webp" alt="Compatriot badge, top view" width="520">
+  <img src="images/board_product_shot.webp" alt="Compatriot badge, top view" width="520">
 </p>
 
 ## Contents
@@ -22,6 +22,7 @@ of breakout headers for the hardware challenges.
 | File | What it shows |
 |------|----------------|
 | [`images/board.webp`](images/board.webp) | Full board, top view |
+| [`images/board_product_shot.webp`](images/board_product_shot.webp) | Same photo, product-shot treatment (contrast, crop, drop shadow) |
 | [`images/headers.jpg`](images/headers.jpg) | Close-up of the H1/H2/H3 and U10/U11/U13/U14 breakout headers |
 | [`images/ethernet.jpg`](images/ethernet.jpg) | The RJ45 (W5500) Ethernet jack used for the CAN bridge |
 | [`images/pcb_render.png`](images/pcb_render.png) | 3D render of the bare PCB layout, from the KiCad source |
