@@ -17,12 +17,46 @@ reference, and player guides for every challenge.
 
 ---
 
-No firmware source here, just what you need to flash a badge, know what's on it,
-and solve the challenges. Full write-ups, connection diagrams, and a browsable
-site live at **[Wired Village](https://gautham-sai05.github.io/wired_village/)**.
+## What is Compatriot?
+
+Compatriot is a self-contained, offline **hardware security training badge** built by
+**team bi0s** for **Wired Village** — a physical, hands-on counterpart to the usual
+software-only CTF. Every challenge runs on real silicon, on a real bus, not a
+simulation: you sniff an actual SPI/I2C/UART line with a logic analyzer, dump an
+actual external flash or EEPROM chip with a CH341A programmer, reverse-engineer a
+real encrypted binary over SWD on a second microcontroller, and inject real CAN
+frames onto a real automotive bus. Nothing about the attack surface is faked for the
+exercise — the skills transfer directly to real embedded devices and vehicles.
+
+The board carries two independent microcontrollers on purpose: an **ESP32-C6**
+(RISC-V) that runs the badge's own UI, challenge logic, BLE/WiFi stack, and the
+CAN-over-Ethernet bridge, and a separate **STM32F103C8T6** target chip whose only
+job is to be a genuine reverse-engineering target — attendees connect their own
+debug probe to it over SWD and extract a flag from its firmware the same way they
+would on any unknown embedded device in the field. A W5500 Ethernet module exposes a
+real CAN bus (bridged over `cannelloni`) for the automotive challenges, so the UDS
+diagnostic and ISO-TP tooling used here is identical to what's used against a real
+vehicle's OBD port.
+
+The badge is deliberately **self-contained**: no backend server, no internet
+dependency, no shared infrastructure that can fall over under load. Progress is
+scored and persisted on the badge itself (NVS, survives a reboot), so it scales to
+as many attendees and as many badges as you can physically hand out — the included
+[`setup.sh`](https://github.com/gautham-sai05/wired_village) /
+[`firmware/flash.sh`](firmware/flash.sh) scripts are built around exactly that:
+provisioning many attendee laptops and many badges, unattended, for a live event.
+
+**17 challenges across 3 categories** (Automotive, Embedded, Wireless), each with a
+guided hint and a full walkthrough, so the badge works equally well as a timed CTF
+station and as a self-paced teaching tool. Full write-ups, wiring diagrams, and tool
+setup instructions are published at
+**[gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)**;
+this repository is the portable reference — firmware, hardware, and guides — needed
+to actually build, flash, and run the badge.
 
 ## Contents
 
+- [What is Compatriot?](#what-is-compatriot)
 - [What's in this repo](#whats-in-this-repo)
 - [Quick start](#quick-start)
 - [The badge](#the-badge)
