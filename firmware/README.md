@@ -1,7 +1,10 @@
 # Firmware
 
-Pre-built binaries for the ESP32-C6-WROOM-1 on the Compatriot badge. No build toolchain
-needed, just flash and go.
+Pre-built binaries for both chips on the Compatriot badge. No build toolchain needed,
+just flash and go.
+
+- The ESP32-C6 firmware below runs the badge itself: UI, challenge logic, BLE/WiFi, CAN bridge.
+- [`stm32_target/`](stm32_target) has the separate firmware for the STM32 target chip used by the Target Acquired challenge.
 
 ## Quick flash (recommended)
 

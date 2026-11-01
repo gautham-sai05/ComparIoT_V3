@@ -68,7 +68,7 @@ actually build, flash, and run the badge.
 
 | Folder | Contents |
 |--------|----------|
-| [`firmware/`](firmware) | Pre-built binaries and a one-command flash script |
+| [`firmware/`](firmware) | Pre-built ESP32 and STM32 binaries and a one-command flash script |
 | [`hardware/`](hardware) | Board photos, full schematic, 3D render, BOM, pin maps |
 | [`challenges/`](challenges) | Player guides for all 17 challenges (Automotive / Embedded / Wireless) |
 
@@ -82,6 +82,9 @@ actually build, flash, and run the badge.
 2. **Connect a serial terminal** at **115200 8N1** to see the badge's own console.
 3. **Open [`challenges/`](challenges)** and start solving. The badge screen itself
    also shows each challenge's objective and wiring.
+
+Building a badge from scratch also needs the STM32 target chip flashed once, see
+[`firmware/stm32_target/`](firmware/stm32_target).
 
 ## The badge
 
@@ -109,7 +112,8 @@ render and bill of materials.
 ```
 ComparIoT_V3/
 ├── firmware/              pre-built binaries, ready to flash
-│   ├── compatriot_merged.bin
+│   ├── compatriot_merged.bin   ESP32 firmware (the badge itself)
+│   ├── stm32_target/           STM32 firmware for Target Acquired
 │   ├── flash.sh
 │   └── README.md
 ├── hardware/              board reference
@@ -129,12 +133,3 @@ ComparIoT_V3/
 - Full guides and connection diagrams: [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
 - Sysrupt, the companion OT/ICS range, is linked from the same site
 - Built by team bi0s for Wired Village
-
-## Acknowledgements
-
-Compatriot's dual-microcontroller approach (an ESP32 for the badge platform paired
-with a separate STM32 as a real reverse-engineering target) follows the same idea as
-[Traboda's CompatrIoT](https://github.com/traboda/CompatrIoT), an open-source
-hardware security training platform built around the same concept. This build is
-team bi0s's own implementation for Wired Village: its own PCB, firmware, challenges,
-and flags.
