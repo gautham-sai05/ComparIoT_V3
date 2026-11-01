@@ -119,13 +119,13 @@ render and bill of materials.
 
 | Event | Date | What was shown |
 |-------|------|-----------------|
-| Black Hat Asia 2025, Arsenal | April 2025 | CompatrIoT, the original open-source platform this design follows |
+| Black Hat Asia 2025, Arsenal | April 2025 | — |
 | SINCON, Infosec in the City (Hardware Hacking Kampung) | 2025 | CompatrIoT (an earlier edition) |
 | CODE BLUE | 2025 | CompatrIoT (an earlier edition), workshop and CTF |
 | BSides Kerala | 2025 | CompatrIoT (an earlier edition), hardware hacking training |
 | BSides Kerala | 2026 | CompatrIoT (an earlier edition), hardware hacking training |
-| CODE BLUE | 2026 (selected) | CompatrIoT (an earlier edition), workshop and CTF |
-| Black Hat Arsenal, India 2026 | 2026 | This build (Compatriot V3) |
+| CODE BLUE | 2026 (selected) | This build (Compatriot V3) |
+| Black Hat Arsenal, India 2026 | 2026 | — |
 
 ## Repository structure
 
