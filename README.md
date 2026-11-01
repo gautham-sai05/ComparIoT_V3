@@ -22,11 +22,12 @@ reference, and player guides for every challenge.
 Compatriot is a self-contained, offline hardware security training badge built by
 team bi0s for Wired Village. It's a physical, hands-on counterpart to the usual
 software-only CTF. Every challenge runs on real silicon, on a real bus, not a
-simulation: you sniff an actual SPI/I2C/UART line with a logic analyzer, dump an
-actual external flash or EEPROM chip with a CH341A programmer, reverse-engineer a
-real encrypted binary over SWD on a second microcontroller, and inject real CAN
-frames onto a real automotive bus. Nothing about the attack surface is faked for the
-exercise. The skills transfer directly to real embedded devices and vehicles.
+simulation: you sniff an actual SPI/I2C/UART line with a logic analyzer, dump the
+badge's own external SPI flash (W25Q64) or I2C EEPROM (M24256E) with a CH341A
+programmer, reverse-engineer a real encrypted binary over SWD on a second
+microcontroller, and inject real CAN frames onto a real automotive bus. Nothing
+about the attack surface is faked for the exercise. The skills transfer directly to
+real embedded devices and vehicles.
 
 The board carries two independent microcontrollers on purpose. An **ESP32-C6**
 (RISC-V) runs the badge's own UI, challenge logic, BLE/WiFi stack, and the
@@ -36,7 +37,9 @@ it over SWD and extract a flag from its firmware the same way they would on any
 unknown embedded device in the field. A W5500 Ethernet module exposes a real CAN bus
 (bridged over `cannelloni`) for the automotive challenges, so the UDS diagnostic and
 ISO-TP tooling used here is identical to what's used against a real vehicle's OBD
-port.
+port. The board also carries two expansion slots (shared I2C and SPI, independent
+chip-select each) so new challenge hardware can be added in future revisions without
+a new PCB.
 
 The badge is deliberately self-contained: no backend server, no internet dependency,
 no shared infrastructure that can fall over under load. Progress is scored and
