@@ -163,5 +163,4 @@ above are what the badge actually runs today.
 ## Links
 
 - Full guides and connection diagrams: [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
-- Sysrupt, the companion OT/ICS range, is linked from the same site
 - Built by team bi0s for Wired Village
