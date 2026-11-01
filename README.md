@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="hardware/images/compatriot_logo.png" alt="Compatriot" width="420">
-
-# Compatriot V3
+<img src="hardware/images/compatriot_logo.png" alt="Compatriot V3" width="520">
 
 <img src="hardware/images/board.webp" alt="Compatriot badge, top view" width="460">
 
