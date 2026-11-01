@@ -62,6 +62,7 @@ actually build, flash, and run the badge.
 - [The badge](#the-badge)
 - [Categories](#categories)
 - [Repository structure](#repository-structure)
+- [Roadmap](#roadmap)
 - [Links](#links)
 
 ## What's in this repo
@@ -127,6 +128,24 @@ ComparIoT_V3/
     ├── wireless.md
     └── README.md
 ```
+
+## Roadmap
+
+Compatriot is still an active build. Planned directions for future revisions:
+
+- More SWD challenges beyond Target Acquired: multiple target chips, protected
+  debug regions, and recovering firmware behind a locked debug port instead of an
+  open one.
+- Dedicated JTAG challenges, separate from the SWD-based ones that exist today, on
+  a chip where JTAG is the only available debug interface.
+- Side-channel challenges: timing and power-based analysis against one of the
+  badge's own chips, not just bus sniffing and firmware dumps.
+- Reimplementing some of the earlier automotive concept challenges (archived in the
+  main project, not shipped on this badge yet) against the live CAN bus instead of
+  as flag-only exercises.
+
+This list reflects current plans, not shipped features. The 17 challenges described
+above are what the badge actually runs today.
 
 ## Links
 
