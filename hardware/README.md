@@ -14,6 +14,7 @@ of breakout headers for the hardware challenges.
 - [Schematics](#schematics)
 - [Key components](#key-components)
 - [Pin map](#pin-map)
+- [Expansion ports](#expansion-ports)
 - [Full bill of materials](#full-bill-of-materials)
 
 ## Images
@@ -70,6 +71,23 @@ Full reference designators and quantities for every part (passives included) are
 GPIO4/5/6/7 on the ESP32 are wired to the onboard SWD/JTAG debug link to the STM32
 target, so don't reuse them for anything else, they'll fight the debug interface.
 This is exactly why the SPI-sniff CS line lives on IO15 and not IO4.
+
+## Expansion ports
+
+The board is built to be extended. Two identical module slots are broken out as
+header pairs:
+
+| Slot | Headers | Pins | Signal |
+|------|---------|------|--------|
+| 1 | CN1 + CN3 | I2C_SDA, I2C_SCL, SPI_CLK, MOD1_CS, SPI_MOSI, SPI_MISO, 3.3 V, VUSB, GND | independent chip-select (`MOD1_CS`) |
+| 2 | CN4 + CN2 | I2C_SDA, I2C_SCL, SPI_CLK, MOD2_CS, SPI_MOSI, SPI_MISO, 3.3 V, VUSB, GND | independent chip-select (`MOD2_CS`) |
+
+Both slots share the same I2C bus and the same SPI clock/MOSI/MISO lines (the same
+bus the onboard flash, EEPROM, and Ethernet module sit on), but each gets its own
+dedicated chip-select, so a plugged-in daughter board can be addressed on either bus
+without colliding with anything already on the board. This is how new challenge
+hardware gets added to future revisions without redesigning the PCB: a new sensor,
+chip, or protocol target plugs straight into slot 1 or slot 2.
 
 ## Full bill of materials
 

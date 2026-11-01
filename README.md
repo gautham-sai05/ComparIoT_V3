@@ -96,6 +96,12 @@ Building a badge from scratch also needs the STM32 target chip flashed once, see
 | **Network** | W5500 Ethernet module, speaks `cannelloni` (CAN-over-UDP) for Automotive. Onboard BLE and WiFi for Wireless. |
 | **Display** | 320×240 LCD, 5-button navigation |
 | **Challenges** | 3 categories, 17 challenges, 2775 total points |
+| **Expansion** | 2 module slots (I2C + SPI + power, independent chip-select each) |
+
+The board is built to grow. Two onboard expansion slots expose a shared I2C bus and
+a shared SPI bus, each with its own independent chip-select, so future challenge
+hardware can plug straight in rather than needing a new PCB revision. See
+[`hardware/README.md`](hardware/README.md#expansion-ports) for the full pinout.
 
 See [`hardware/README.md`](hardware/README.md) for the full pin map, schematics, 3D
 render and bill of materials.
@@ -143,6 +149,8 @@ Compatriot is still an active build. Planned directions for future revisions:
 - Reimplementing some of the earlier automotive concept challenges (archived in the
   main project, not shipped on this badge yet) against the live CAN bus instead of
   as flag-only exercises.
+- Ethernet-based challenges, using the onboard W5500 for more than just the CAN
+  bridge it runs today.
 
 This list reflects current plans, not shipped features. The 17 challenges described
 above are what the badge actually runs today.
