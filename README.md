@@ -21,8 +21,8 @@ reference, and player guides for every challenge.
 
 ## What is Compatriot?
 
-Compatriot is a self-contained, offline hardware security training badge built by
-team bi0s. It's a physical, hands-on counterpart to the usual software-only CTF.
+Compatriot is a self-contained, offline hardware security training badge. It's a
+physical, hands-on counterpart to the usual software-only CTF.
 Every challenge runs on real silicon, on a real bus, not a simulation: you sniff an
 actual SPI/I2C/UART line with a logic analyzer, dump the badge's own external SPI
 flash (W25Q64) or I2C EEPROM (M24256E) with a CH341A
@@ -164,7 +164,3 @@ above are what the badge actually runs today.
 See [LICENSE](LICENSE). Non-commercial use only: individuals, researchers, and
 educators are free to use, flash, and adapt this, but not to sell it or build a
 commercial product on top of it without permission.
-
----
-
-<div align="center">Built by team bi0s</div>
