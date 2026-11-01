@@ -61,6 +61,7 @@ the badge.
 - [Quick start](#quick-start)
 - [The badge](#the-badge)
 - [Categories](#categories)
+- [Events](#events)
 - [Repository structure](#repository-structure)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -113,6 +114,13 @@ render and bill of materials.
 | Automotive (CAN bus and UDS over Ethernet) | 5 | 1150 | [`challenges/automotive.md`](challenges/automotive.md) |
 | Embedded (hardware peripherals) | 8 | 925 | [`challenges/embedded.md`](challenges/embedded.md) |
 | Wireless (BLE / WiFi) | 5 | 800 | [`challenges/wireless.md`](challenges/wireless.md) |
+
+## Events
+
+| Event | Date | What was shown |
+|-------|------|-----------------|
+| Black Hat Asia 2025, Arsenal | April 2025 | CompatrIoT, the open-source hardware security platform this design follows |
+| Black Hat Arsenal, India 2026 | 2026 | This build |
 
 ## Repository structure
 
