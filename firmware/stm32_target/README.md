@@ -11,7 +11,7 @@ skip the point of the challenge.
 | File | Use |
 |------|-----|
 | `compatriot_stm32_target.bin` | Raw flash image, for flashing a fresh STM32 or for a static dump-and-disassemble approach |
-| `compatriot_stm32_target.elf` | Same firmware with debug symbols, for attaching GDB live over SWD |
+| `compatriot_stm32_target.elf` | Same firmware with its symbol table (function/variable names, no debug info), for setting GDB breakpoints by name over SWD |
 
 ## Flash it to a fresh board
 
