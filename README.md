@@ -5,7 +5,7 @@
   <img src="hardware/images/compatriot_logo_black.png" alt="Compatriot V3" width="520">
 </picture>
 
-<img src="hardware/images/board_product_shot.webp" alt="Compatriot badge, top view" width="460">
+<img src="hardware/images/board.png" alt="Compatriot badge, top view" width="460">
 
 **The Compatriot hardware security badge.** Pre-built firmware, full hardware
 reference, and player guides for every challenge.
