@@ -1,4 +1,4 @@
-# Compatriot — Embedded Challenges
+# Compatriot: Embedded Challenges
 
 ## Tools
 
@@ -37,7 +37,7 @@ Install all of this once on a Linux machine, in a terminal.
 
 **Logic 2** (Saleae's logic analyzer app) isn't a package, download the installer directly:
 
-[saleae.com/downloads](https://www.saleae.com/downloads/) — grab the Linux `.AppImage`, mark it executable (`chmod +x Logic*.AppImage`), then run it. Free, no account needed for the app itself.
+[saleae.com/downloads](https://www.saleae.com/downloads/), grab the Linux `.AppImage`, mark it executable (`chmod +x Logic*.AppImage`), then run it. Free, no account needed for the app itself.
 
 Don't have real Saleae hardware? The cheap 8-channel clones work fine with the free, open-source **PulseView** instead (`sudo apt install pulseview`, or [sigrok.org/wiki/Downloads](https://sigrok.org/wiki/Downloads)). The steps below are written for Logic 2; PulseView's menu names differ but the same settings (sample rate, channel assignment, decoder/analyzer type) are all there under different labels.
 

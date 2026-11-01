@@ -2,13 +2,13 @@
 
 Player-facing guides for all 17 Compatriot challenges, grouped by category. Each
 guide explains the tool, how to wire up to the badge, a hint, and a full step-by-step
-walkthrough — none of them print the flag itself, you still have to find it.
+walkthrough. None of them print the flag itself, you still have to find it.
 
 | File | Category | Count | Points |
 |------|----------|-------|--------|
-| [automotive.md](automotive.md) | Automotive — CAN bus + UDS over Ethernet | 5 | 1150 |
-| [embedded.md](embedded.md) | Embedded — hardware peripherals | 7 | 825 |
-| [wireless.md](wireless.md) | Wireless — BLE / WiFi | 5 | 800 |
+| [automotive.md](automotive.md) | Automotive (CAN bus and UDS over Ethernet) | 5 | 1150 |
+| [embedded.md](embedded.md) | Embedded (hardware peripherals) | 7 | 825 |
+| [wireless.md](wireless.md) | Wireless (BLE / WiFi) | 5 | 800 |
 | | **Total** | **17** | **2775** |
 
 ## How to score

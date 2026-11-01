@@ -4,7 +4,7 @@
 
 <img src="hardware/images/board.webp" alt="Compatriot badge, top view" width="460">
 
-**The Compatriot hardware security badge** — pre-built firmware, full hardware
+**The Compatriot hardware security badge.** Pre-built firmware, full hardware
 reference, and player guides for every challenge.
 
 [![Firmware](https://img.shields.io/badge/firmware-ESP32--C6-00897B)](firmware)
@@ -19,30 +19,30 @@ reference, and player guides for every challenge.
 
 ## What is Compatriot?
 
-Compatriot is a self-contained, offline **hardware security training badge** built by
-**team bi0s** for **Wired Village** — a physical, hands-on counterpart to the usual
+Compatriot is a self-contained, offline hardware security training badge built by
+team bi0s for Wired Village. It's a physical, hands-on counterpart to the usual
 software-only CTF. Every challenge runs on real silicon, on a real bus, not a
 simulation: you sniff an actual SPI/I2C/UART line with a logic analyzer, dump an
 actual external flash or EEPROM chip with a CH341A programmer, reverse-engineer a
 real encrypted binary over SWD on a second microcontroller, and inject real CAN
 frames onto a real automotive bus. Nothing about the attack surface is faked for the
-exercise — the skills transfer directly to real embedded devices and vehicles.
+exercise. The skills transfer directly to real embedded devices and vehicles.
 
-The board carries two independent microcontrollers on purpose: an **ESP32-C6**
-(RISC-V) that runs the badge's own UI, challenge logic, BLE/WiFi stack, and the
-CAN-over-Ethernet bridge, and a separate **STM32F103C8T6** target chip whose only
-job is to be a genuine reverse-engineering target — attendees connect their own
-debug probe to it over SWD and extract a flag from its firmware the same way they
-would on any unknown embedded device in the field. A W5500 Ethernet module exposes a
-real CAN bus (bridged over `cannelloni`) for the automotive challenges, so the UDS
-diagnostic and ISO-TP tooling used here is identical to what's used against a real
-vehicle's OBD port.
+The board carries two independent microcontrollers on purpose. An **ESP32-C6**
+(RISC-V) runs the badge's own UI, challenge logic, BLE/WiFi stack, and the
+CAN-over-Ethernet bridge. A separate **STM32F103C8T6** target chip has only one job:
+be a genuine reverse-engineering target. Attendees connect their own debug probe to
+it over SWD and extract a flag from its firmware the same way they would on any
+unknown embedded device in the field. A W5500 Ethernet module exposes a real CAN bus
+(bridged over `cannelloni`) for the automotive challenges, so the UDS diagnostic and
+ISO-TP tooling used here is identical to what's used against a real vehicle's OBD
+port.
 
-The badge is deliberately **self-contained**: no backend server, no internet
-dependency, no shared infrastructure that can fall over under load. Progress is
-scored and persisted on the badge itself (NVS, survives a reboot), so it scales to
-as many attendees and as many badges as you can physically hand out — the included
-[`setup.sh`](https://github.com/gautham-sai05/wired_village) /
+The badge is deliberately self-contained: no backend server, no internet dependency,
+no shared infrastructure that can fall over under load. Progress is scored and
+persisted on the badge itself (NVS, survives a reboot), so it scales to as many
+attendees and as many badges as you can physically hand out. The included
+[`setup.sh`](https://github.com/gautham-sai05/wired_village) and
 [`firmware/flash.sh`](firmware/flash.sh) scripts are built around exactly that:
 provisioning many attendee laptops and many badges, unattended, for a live event.
 
@@ -50,9 +50,9 @@ provisioning many attendee laptops and many badges, unattended, for a live event
 guided hint and a full walkthrough, so the badge works equally well as a timed CTF
 station and as a self-paced teaching tool. Full write-ups, wiring diagrams, and tool
 setup instructions are published at
-**[gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)**;
-this repository is the portable reference — firmware, hardware, and guides — needed
-to actually build, flash, and run the badge.
+[gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/).
+This repository is the portable reference, firmware, hardware, and guides, needed to
+actually build, flash, and run the badge.
 
 ## Contents
 
@@ -68,7 +68,7 @@ to actually build, flash, and run the badge.
 
 | Folder | Contents |
 |--------|----------|
-| [`firmware/`](firmware) | Pre-built binaries + a one-command flash script |
+| [`firmware/`](firmware) | Pre-built binaries and a one-command flash script |
 | [`hardware/`](hardware) | Board photos, full schematic, 3D render, BOM, pin maps |
 | [`challenges/`](challenges) | Player guides for all 17 challenges (Automotive / Embedded / Wireless) |
 
@@ -89,7 +89,7 @@ to actually build, flash, and run the badge.
 |---|---|
 | **MCU** | ESP32-C6-WROOM-1 (RISC-V), 4 MB flash |
 | **Secondary target** | STM32F103C8T6, SWD-debuggable over header H3 |
-| **Network** | W5500 Ethernet module, speaks `cannelloni` (CAN-over-UDP) for Automotive; onboard BLE + WiFi for Wireless |
+| **Network** | W5500 Ethernet module, speaks `cannelloni` (CAN-over-UDP) for Automotive. Onboard BLE and WiFi for Wireless. |
 | **Display** | 320×240 LCD, 5-button navigation |
 | **Challenges** | 3 categories, 17 challenges, 2775 total points |
 
@@ -100,9 +100,9 @@ render and bill of materials.
 
 | Category | Challenges | Points | Guide |
 |----------|:---:|:---:|-------|
-| 🚗 Automotive — CAN bus + UDS over Ethernet | 5 | 1150 | [`challenges/automotive.md`](challenges/automotive.md) |
-| 🔌 Embedded — hardware peripherals | 7 | 825 | [`challenges/embedded.md`](challenges/embedded.md) |
-| 📡 Wireless — BLE / WiFi | 5 | 800 | [`challenges/wireless.md`](challenges/wireless.md) |
+| Automotive (CAN bus and UDS over Ethernet) | 5 | 1150 | [`challenges/automotive.md`](challenges/automotive.md) |
+| Embedded (hardware peripherals) | 7 | 825 | [`challenges/embedded.md`](challenges/embedded.md) |
+| Wireless (BLE / WiFi) | 5 | 800 | [`challenges/wireless.md`](challenges/wireless.md) |
 
 ## Repository structure
 
@@ -112,12 +112,12 @@ ComparIoT_V3/
 │   ├── compatriot_merged.bin
 │   ├── flash.sh
 │   └── README.md
-├── hardware/               board reference
-│   ├── images/             board photo, header/ethernet close-ups, 3D render
-│   ├── schematics/          full schematic PDF + annotated crops
-│   ├── bom.csv              full bill of materials
+├── hardware/              board reference
+│   ├── images/            board photo, header/ethernet close-ups, 3D render
+│   ├── schematics/        full schematic PDF + annotated crops
+│   ├── bom.csv            full bill of materials
 │   └── README.md
-└── challenges/              player guides, one file per category
+└── challenges/            player guides, one file per category
     ├── automotive.md
     ├── embedded.md
     ├── wireless.md
@@ -126,6 +126,6 @@ ComparIoT_V3/
 
 ## Links
 
-- 🌐 **Full guides & connection diagrams:** [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
-- 🛰️ **Sysrupt (the companion OT/ICS range):** linked from the same site
-- 🏷️ **team bi0s** — Wired Village
+- Full guides and connection diagrams: [gautham-sai05.github.io/wired_village](https://gautham-sai05.github.io/wired_village/)
+- Sysrupt, the companion OT/ICS range, is linked from the same site
+- Built by team bi0s for Wired Village

@@ -1,4 +1,4 @@
-# Compatriot — Automotive Challenges
+# Compatriot: Automotive Challenges
 
 **Already on the Arsenal Labs kit?** All of this is preinstalled there. Skip straight to Bus setup below.
 

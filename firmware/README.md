@@ -36,7 +36,7 @@ esptool.py --chip esp32c6 --port /dev/ttyACM0 --baud 921600 write_flash \
 ## Notes
 
 - Target: ESP32-C6-WROOM-1 (RISC-V), 4 MB flash, `huge_app` partition scheme.
-- USB shows up as a CDC serial port (`/dev/ttyACM0` on Linux) — connect a serial
+- USB shows up as a CDC serial port (`/dev/ttyACM0` on Linux). Connect a serial
   terminal at **115200 8N1** after flashing to see the badge's own console.
 - Flashing preserves nothing by itself; challenge progress lives in NVS and survives
   a normal reboot, but a full chip erase (`esptool.py erase_flash`) wipes it.

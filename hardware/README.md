@@ -38,7 +38,7 @@ of breakout headers for the hardware challenges.
 
 | Ref | Part | Function |
 |-----|------|----------|
-| U3 | ESP32-C6-WROOM-1-N8 | Main MCU — badge UI, challenge logic, BLE/WiFi, CAN bridge |
+| U3 | ESP32-C6-WROOM-1-N8 | Main MCU: badge UI, challenge logic, BLE/WiFi, CAN bridge |
 | U7 | STM32F103C8T6 | Secondary SWD-debuggable target chip (Target Acquired challenge) |
 | RJ1 | WIZ850IO (W5500) | Ethernet-to-SPI bridge, speaks `cannelloni` (CAN-over-UDP) |
 | U2 | M24256E-FMN6TP | External I2C EEPROM, 32 KB, addr `0x50` |
@@ -68,8 +68,8 @@ Full reference designators and quantities for every part (passives included) are
 | Buzzer | IO11 | — |
 
 GPIO4/5/6/7 on the ESP32 are wired to the onboard SWD/JTAG debug link to the STM32
-target — don't reuse them for anything else, they'll fight the debug interface. (This
-is exactly why the SPI-sniff CS line lives on IO15 and not IO4.)
+target, so don't reuse them for anything else, they'll fight the debug interface.
+This is exactly why the SPI-sniff CS line lives on IO15 and not IO4.
 
 ## Full bill of materials
 

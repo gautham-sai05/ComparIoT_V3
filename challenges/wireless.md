@@ -1,4 +1,4 @@
-# Compatriot — Wireless Challenges
+# Compatriot: Wireless Challenges
 
 ## Tools
 
